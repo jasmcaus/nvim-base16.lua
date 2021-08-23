@@ -275,6 +275,190 @@ local function apply_base16_theme(theme)
     highlight("LspDiagnosticsUnderlineInformation",   nil, nil, nil, nil)
     highlight("LspDiagnosticsUnderlineHint",          nil, nil, nil, nil)
     
+    -- These groups are for the neovim tree-sitter highlights.
+    -- As of writing, tree-sitter support is a WIP, group names may change.
+    -- By default, most of these groups link to an appropriate Vim group,
+    -- TSError -> Error for example, so you do not have to define these unless you explicitly want 
+    -- to support Treesitter's improved syntax awareness.
+
+    -- highlight("TSAnnotation", nil, nil, nil, nil)
+    -- highlight("TSAttribute",  nil, nil, nil, nil)
+    -- highlight("TSBoolean",    nil, nil, nil, nil)
+    -- highlight("TSCharacter",  nil, nil, nil, nil)
+    -- highlight("TSComment",    nil, nil, nil, nil)
+    highlight("TSNote", theme.base00, "#75beff", nil, nil)
+    highlight("TSWarning", theme.base00, theme.base0A, nil, nil)
+    highlight("TSDanger", theme.base00, theme.base08, nil, nil)
+    highlight("TSConstructor", theme.base08, nil, nil, nil)
+    -- highlight("TSConditional", nil, nil, nil, nil)
+    highlight("TSConstant", theme.base0D, nil, nil, nil)
+    highlight("commentTSConstant", theme.base08, nnnlll)
+    -- highlight("TSConstBuiltin", nnnlll)
+    -- highlight("TSConstMacro",   nnnlll)
+    -- highlight("TSError",        nnnlll)
+    -- highlight("TSException",    nnnlll)
+    highlight("TSField", theme.base05, nnnlll)
+    -- highlight("TSFloat      ", nnnlll) 
+    -- highlight("TSFunction   ", nnnlll) 
+    -- highlight("TSFuncBuiltin", nnnlll) 
+    -- highlight("TSFuncMacro  ", nnnlll) 
+    highlight("TSInclude", theme.base08, nnnlll)
+    highlight("TSKeyword", theme.base08, nnnlll)
+    highlight("TSKeywordFunction", theme.base08, nnnlll)
+    highlight("TSLabel", theme.base0D, nnnlll)
+    -- highlight("TSMethod", nnnlll) 
+    highlight("TSNamespace",  theme.base05, nnnlll)
+    -- highlight("TSNone", nnnlll) 
+    -- highlight("TSNumber", nnnlll) 
+    highlight("TSOperator", theme.base08, nnnlll)
+    highlight("TSParameter", theme.base07, nnnlll_para)
+    -- highlight("TSParameterReference", nnnlll)"
+    highlight("TSProTSperty", theme.base07, nnnll)
+    highlight("TSPunctDelimiter", theme.base05, nnnlll}
+    highlight("TSPunctBracket", theme.base05, nnnlll)
+    highlight("TSPunctSpecial", theme.base05, nnnlll)
+    -- highlight("TSRepeat", nnnlll)
+    -- highlight("TSString", nnnlll)
+    highlight("TSStringRegex", theme.base08, nnnlll)
+    highlight("TSStringEscape", "#ff938a", nnnlll)
+    -- highlight("TSSymbol", nnnlll)
+    highlight("Type",  theme.base08, nnnlll)
+    highlight("TSTypeBuiltin ", nnnlll)
+    highlight("Variable", theme.base08, nnnlll)
+    highlight("VariableBuiltin", theme.base08, nnnlll)
+    highlight("Tag",             theme.base0B, nnnlll)
+    highlight("TSTagDelimiter", nnnlll)
+    highlight("TSText",         nnnlll)
+    highlight("TextReference",  "#ff938a", nnnlll)
+    highlight("TSEmphasis",     nnnlll)
+    highlight("TSUnderline",    nnnlll)
+    highlight("TSStrike",       nnnlll)
+    highlight("TSTitle",        nnnlll)
+    highlight("TSLiteral",      nnnlll)
+    highlight("TSURI",          nnnlll)
+
+    -- Lua
+    highlight("luaTSConstructor", theme.base05, nnnlll)
+
+    -- C
+    highlight("cTSLabel", theme.base05, nnnlll)
+
+    -- CSS
+    highlight("cssTSProperty", theme.base07, nnnlll)
+    highlight("cssTSType",theme.base0B, nnnlll)
+
+    -- html
+    highlight("htmlTSConstant",theme.base0B, nnnlll)
+    highlight("htmlTag", theme.base05, nnnlll)
+    highlight("htmlEndTag", theme.base05, nnnlll)
+    highlight("htmlTagName",theme.base0B, nnnlll)
+    highlight("htmlArg", "#ff938a", nnnlll)
+
+    -- javascript
+    highlight("javascriptTSType", theme.base05, nnnlll)
+    highlight("javascriptTSParameter", "#f69d50", nnnlll)
+    highlight("javascriptTSVariable", theme.base08, nnnlll)}
+    highlight("javascriptTSPunctDelimiter", theme.base05, nnnlll)
+    highlight("javascriptTSStringRegex", theme.base0C, nnnlll)
+    highlight("javascriptTSConstructor", theme.base07, nnnlll)
+    highlight("javascriptTSProperty", theme.base07, nnnlll)
+    highlight("regexTSStringEscape", theme.base08, nnnlll)
+
+    -- json
+    highlight("jsonTSLabel", c.syntax.jsonLabel)
+
+    -- less
+    highlight("lessVariable", theme.base05, nnnlll)
+    highlight("lessProperty", theme.base08, nnnlll)}
+    highlight("cssTagName",theme.base0B, nnnlll)
+    highlight("cssPseudoClassId", theme.base07, nnnlll)
+    highlight("lessClassCall", theme.base07, nnnlll)
+    highlight("lessClass", theme.base07, nnnlll)
+
+    -- make
+    highlight("makeSpecial", theme.base08, nnnlll)
+
+    -- obj-c
+    highlight("cBlock", theme.base07, nnnlll)
+
+    -- python
+    highlight("pythonTSType", theme.base07, nnnlll)
+    highlight("pythonTSParameter", "#f69d50", nnnlll)
+
+    -- ruby
+    highlight("rubyTSType", theme.base07, nnnlll)
+
+    -- scss
+    highlight("scssTSVariable", "#f69d50", nnnlll)
+    highlight("scssTSType",theme.base0B, nnnlll)
+    highlight("scssTSProperty", theme.base07, nnnlll)
+    highlight("scssTSParameter", "#f69d50", nnnlll)
+
+    -- sql
+    highlight("sqlFold", theme.base08, nnnlll)}
+    highlight("sqlKeyword", theme.base08, nnnlll)
+
+    -- typescript
+    highlight("typescriptTSType", theme.base07, nnnlll)
+    highlight("typescriptTSConstructor", theme.base07, nnnlll)
+    highlight("typescriptTSTypeBuiltin", theme.base08, nnnlll)}
+
+    -- xml
+    highlight("xmlProcessing",theme.base0B, nnnlll)
+    highlight("xmlTagName",theme.base0B, nnnlll)
+    highlight("xmlTag", theme.base05, nnnlll)
+    highlight("xmlAttrib",theme.base0B, nnnlll)
+
+    -- yaml
+    highlight("yamlTSField",theme.base0B, nnnlll)
+
+    -- java
+    highlight("javaTSVariable", theme.base05, nnnlll)
+    highlight("javaTSType", theme.base07, nnnlll)
+    highlight("javaTSParameter", "#f69d50", nnnlll)
+
+    -- Markdown
+    highlight("markdownHeadingRule", theme.base08, nnnlll)}
+    highlight("markdownListMarker", "#f69d50", nnnlll)
+    highlight("markdownRule", theme.base08, nnnlll)}
+    highlight("markdownBold", theme.base05, nnnlll)
+    highlight("markdownItalic", theme.base05, nnnlll)
+    highlight("markdownCode", theme.base05, nnnlll)
+    highlight("markdownCodeBlock", theme.base05, nnnlll)
+    highlight("markdownBlockquote",theme.base0B, nnnlll)
+    highlight("markdownCodeDelimiter", theme.base07, nnnlll)
+    highlight("markdownUrlTitle", theme.base0C, nnnlll)
+
+
+    -- DevIcons
+    highlight("DevIconC", "#519aba", nnnlll)
+    highlight("DevIconClojure", "#8dc149", nnnlll)
+    highlight("DevIconCoffee", "#cbcb41", nnnlll)
+    highlight("DevIconCs", "#519aba", nnnlll)
+    highlight("DevIconCss", "#519aba", nnnlll)
+    highlight("DevIconMarkdown", "#519aba", nnnlll)
+    highlight("DevIconGo", "#519aba", nnnlll)
+    highlight("DevIconHtm", "#e37933", nnnlll)
+    highlight("DevIconHtml", "#e37933", nnnlll)
+    highlight("DevIconJava", "#cc3e44", nnnlll)
+    highlight("DevIconJs", "#cbcb41", nnnlll)
+    highlight("DevIconJson", "#cbcb41", nnnlll)
+    highlight("DevIconLess", "#519aba", nnnlll)
+    highlight("DevIconMakefile", "#e37933", nnnlll)
+    highlight("DevIconMustache", "#e37933", nnnlll)
+    highlight("DevIconPhp", "#a074c4", nnnlll)
+    highlight("DevIconPython", "#4e93b3", nnnlll)
+    highlight("DevIconErb", "#cc3e44", nnnlll)
+    highlight("DevIconRb", "#cc3e44", nnnlll)
+    highlight("DevIconSass", "#f55385", nnnlll)
+    highlight("DevIconScss", "#f55385", nnnlll)
+    highlight("DevIconSh", "#4d5a5e", nnnlll)
+    highlight("DevIconSql", "#f55385", nnnlll)
+    highlight("DevIconTs", "#519aba", nnnlll)
+    highlight("DevIconXml", "#e37933", nnnlll)
+    highlight("DevIconYaml", "#a074c4", nnnlll)
+    highlight("DevIconYml", "#a074c4", nnnlll)
+
     -- TODO
     -- nvim.command 'syntax on'
 end
@@ -300,7 +484,7 @@ return setmetatable({
         end
         return result
     end
-}, {
+) {
     __call = function (_, ...)
         apply_base16_theme(...)
     end,
