@@ -1,11 +1,11 @@
 local function highlight(group, guifg, guibg, attr, guisp)
     local parts = {group}
-    if guifg then table.insert(parts, "guifg=#"..guifg) end
-    if guibg then table.insert(parts, "guibg=#"..guibg) end
+    if guifg then table.insert(parts, "guifg="..guifg) end
+    if guibg then table.insert(parts, "guibg="..guibg) end
     if attr then
         table.insert(parts, "gui="..attr)
     end
-    if guisp then table.insert(parts, "guisp=#"..guisp) end
+    if guisp then table.insert(parts, "guisp="..guisp) end
 
     -- nvim.ex.highlight(parts)
     vim.api.nvim_command('highlight '..table.concat(parts, ' '))
@@ -13,31 +13,46 @@ end
 
 -- Modified from https://github.com/chriskempson/base16-vim
 local function apply_base16_theme(theme)
-
     -- Neovim terminal colours
     if vim.fn.has("nvim") then
-        vim.g.terminal_color_0 =  "#"..theme.base00
-        vim.g.terminal_color_1 =  "#"..theme.base08
-        vim.g.terminal_color_2 =  "#"..theme.base0B
-        vim.g.terminal_color_3 =  "#"..theme.base0A
-        vim.g.terminal_color_4 =  "#"..theme.base0D
-        vim.g.terminal_color_5 =  "#"..theme.base0E
-        vim.g.terminal_color_6 =  "#"..theme.base0C
-        vim.g.terminal_color_7 =  "#"..theme.base05
-        vim.g.terminal_color_8 =  "#"..theme.base03
-        vim.g.terminal_color_9 =  "#"..theme.base08
-        vim.g.terminal_color_10 = "#"..theme.base0B
-        vim.g.terminal_color_11 = "#"..theme.base0A
-        vim.g.terminal_color_12 = "#"..theme.base0D
-        vim.g.terminal_color_13 = "#"..theme.base0E
-        vim.g.terminal_color_14 = "#"..theme.base0C
-        vim.g.terminal_color_15 = "#"..theme.base07
+        -- vim.g.terminal_color_0 =  "#"..theme.base00
+        -- vim.g.terminal_color_1 =  "#"..theme.base08
+        -- vim.g.terminal_color_2 =  "#"..theme.base0B
+        -- vim.g.terminal_color_3 =  "#"..theme.base0A
+        -- vim.g.terminal_color_4 =  "#"..theme.base0D
+        -- vim.g.terminal_color_5 =  "#"..theme.base0E
+        -- vim.g.terminal_color_6 =  "#"..theme.base0C
+        -- vim.g.terminal_color_7 =  "#"..theme.base05
+        -- vim.g.terminal_color_8 =  "#"..theme.base03
+        -- vim.g.terminal_color_9 =  "#"..theme.base08
+        -- vim.g.terminal_color_10 = "#"..theme.base0B
+        -- vim.g.terminal_color_11 = "#"..theme.base0A
+        -- vim.g.terminal_color_12 = "#"..theme.base0D
+        -- vim.g.terminal_color_13 = "#"..theme.base0E
+        -- vim.g.terminal_color_14 = "#"..theme.base0C
+        -- vim.g.terminal_color_15 = "#"..theme.base07
+        vim.g.terminal_color_0 =  theme.base00
+        vim.g.terminal_color_1 =  theme.base08
+        vim.g.terminal_color_2 =  theme.base0B
+        vim.g.terminal_color_3 =  theme.base0A
+        vim.g.terminal_color_4 =  theme.base0D
+        vim.g.terminal_color_5 =  theme.base0E
+        vim.g.terminal_color_6 =  theme.base0C
+        vim.g.terminal_color_7 =  theme.base05
+        vim.g.terminal_color_8 =  theme.base03
+        vim.g.terminal_color_9 =  theme.base08
+        vim.g.terminal_color_10 = theme.base0B
+        vim.g.terminal_color_11 = theme.base0A
+        vim.g.terminal_color_12 = theme.base0D
+        vim.g.terminal_color_13 = theme.base0E
+        vim.g.terminal_color_14 = theme.base0C
+        vim.g.terminal_color_15 = theme.base07
         if vim.o.background == "light" then
-            vim.g.terminal_color_background = "#"..theme.base05
-            vim.g.terminal_color_foreground = "#"..theme.base0B
+            vim.g.terminal_color_background = theme.base05
+            vim.g.terminal_color_foreground = theme.base0B
         else
-            vim.g.terminal_color_background = "#"..theme.base00
-            vim.g.terminal_color_foreground = "#"..theme.base0E
+            vim.g.terminal_color_background = theme.base00
+            vim.g.terminal_color_foreground = theme.base0E
         end
     end
 
