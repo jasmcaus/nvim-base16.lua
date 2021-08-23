@@ -261,11 +261,20 @@ local function apply_base16_theme(theme)
     highlight("javaOperator",     theme.base0D, nil, nil, nil)
 
     -- LspDiagnostic base highlight group
-    highlight("LspDiagnosticsDefaultError",       theme.base08, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultWarning",     theme.base0A, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultInformation", theme.base0D, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultHint",        theme.base0C, nil, nil, nil)
-
+    -- These groups are for the native LSP client. Some other LSP clients may use these groups, or use their own. 
+    -- Consult your LSP client's documentation.
+    highlight("LspReferenceText",                     nil, "#28575d", nil, nil)
+    highlight("LspReferenceRead",                     nil, "#28575d", nil, nil)
+    highlight("LspReferenceWrite",                    nil, "#28575d", nil, nil)
+    highlight("LspDiagnosticsDefaultError",           theme.base08, nil, nil, nil)
+    highlight("LspDiagnosticsDefaultWarning",         theme.base0A, nil, nil, nil)
+    highlight("LspDiagnosticsDefaultInformation",     theme.base0D, nil, nil, nil)
+    highlight("LspDiagnosticsDefaultHint",            theme.base0C, nil, nil, nil)
+    highlight("LspDiagnosticsUnderlineError",         nil, nil, nil, nil)
+    highlight("LspDiagnosticsUnderlineWarning",       nil, nil, nil, nil)
+    highlight("LspDiagnosticsUnderlineInformation",   nil, nil, nil, nil)
+    highlight("LspDiagnosticsUnderlineHint",          nil, nil, nil, nil)
+    
     -- TODO
     -- nvim.command 'syntax on'
 end
