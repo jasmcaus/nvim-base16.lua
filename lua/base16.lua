@@ -305,7 +305,7 @@ local function apply_base16_theme(theme)
     highlight("TSOperator", theme.base08, nil, nil, nil)
     highlight("TSParameter", theme.base07, nil, nil, nil_para)
     -- highlight("TSParameterReference", nil, nil, nil)"
-    highlight("TSProTSperty", theme.base07, nnnll)
+    highlight("TSProperty", theme.base07, nnnll)
     highlight("TSPunctDelimiter", theme.base05, nil, nil, nil}
     highlight("TSPunctBracket", theme.base05, nil, nil, nil)
     highlight("TSPunctSpecial", theme.base05, nil, nil, nil)
@@ -314,11 +314,11 @@ local function apply_base16_theme(theme)
     highlight("TSStringRegex", theme.base08, nil, nil, nil)
     highlight("TSStringEscape", "#ff938a", nil, nil, nil)
     -- highlight("TSSymbol", nil, nil, nil)
-    highlight("Type",  theme.base08, nil, nil, nil)
+    highlight("TSType",  theme.base08, nil, nil, nil)
     highlight("TSTypeBuiltin ", nil, nil, nil)
-    highlight("Variable", theme.base08, nil, nil, nil)
-    highlight("VariableBuiltin", theme.base08, nil, nil, nil)
-    highlight("Tag",             theme.base0B, nil, nil, nil)
+    highlight("TSVariable", theme.base08, nil, nil, nil)
+    highlight("TSVariableBuiltin", theme.base08, nil, nil, nil)
+    highlight("TSTag",             theme.base0B, nil, nil, nil)
     highlight("TSTagDelimiter", nil, nil, nil)
     highlight("TSText",         nil, nil, nil)
     highlight("TextReference",  "#ff938a", nil, nil, nil)
@@ -328,7 +328,7 @@ local function apply_base16_theme(theme)
     highlight("TSTitle",        nil, nil, nil)
     highlight("TSLiteral",      nil, nil, nil)
     highlight("TSURI",          nil, nil, nil)
-    
+
     -- TODO
     -- nvim.command 'syntax on'
 end
