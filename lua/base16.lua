@@ -260,74 +260,196 @@ local function apply_base16_theme(theme)
     -- Java highlighting
     highlight("javaOperator",     theme.base0D, nil, nil, nil)
 
-    -- LspDiagnostic base highlight group
-    -- These groups are for the native LSP client. Some other LSP clients may use these groups, or use their own. 
-    -- Consult your LSP client's documentation.
-    highlight("LspDiagnosticsDefaultError",           theme.base08, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultWarning",         theme.base0A, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultInformation",     theme.base0D, nil, nil, nil)
-    highlight("LspDiagnosticsDefaultHint",            theme.base0C, nil, nil, nil)
+    -- -- LspDiagnostic base highlight group
+    -- -- These groups are for the native LSP client. Some other LSP clients may use these groups, or use their own. 
+    -- -- Consult your LSP client's documentation.
+    -- highlight("LspDiagnosticsDefaultError",           theme.base08, nil, nil, nil)
+    -- highlight("LspDiagnosticsDefaultWarning",         theme.base0A, nil, nil, nil)
+    -- highlight("LspDiagnosticsDefaultInformation",     theme.base0D, nil, nil, nil)
+    -- highlight("LspDiagnosticsDefaultHint",            theme.base0C, nil, nil, nil)
     
-    -- These groups are for the neovim tree-sitter highlights.
-    -- As of writing, tree-sitter support is a WIP, group names may change.
-    -- By default, most of these groups link to an appropriate Vim group,
-    -- TSError -> Error for example, so you do not have to define these unless you explicitly want 
-    -- to support Treesitter's improved syntax awareness.
-    highlight("TSAnnotation", nil, nil, nil, nil)
-    highlight("TSAttribute",  nil, nil, nil, nil)
-    highlight("TSBoolean",    nil, nil, nil, nil)
-    highlight("TSCharacter",  nil, nil, nil, nil)
-    highlight("TSComment",    nil, nil, nil, nil)
-    highlight("TSNote", theme.base00, "#75beff", nil, nil)
-    highlight("TSWarning", theme.base00, theme.base0A, nil, nil)
-    highlight("TSDanger", theme.base00, theme.base08, nil, nil)
-    highlight("TSConstructor", theme.base08, nil, nil, nil)
-    -- highlight("TSConditional", nil, nil, nil, nil)
-    highlight("TSConstant", theme.base0D, nil, nil, nil)
-    highlight("commentTSConstant", theme.base08, nil, nil, nil)
-    -- highlight("TSConstBuiltin", nil, nil, nil)
-    -- highlight("TSConstMacro",   nil, nil, nil)
-    -- highlight("TSError",        nil, nil, nil)
-    -- highlight("TSException",    nil, nil, nil)
-    highlight("TSField", theme.base05, nil, nil, nil)
-    -- highlight("TSFloat      ", nil, nil, nil) 
-    -- highlight("TSFunction   ", nil, nil, nil) 
-    -- highlight("TSFuncBuiltin", nil, nil, nil) 
-    -- highlight("TSFuncMacro  ", nil, nil, nil) 
-    highlight("TSInclude", theme.base08, nil, nil, nil)
-    highlight("TSKeyword", theme.base08, nil, nil, nil)
-    highlight("TSKeywordFunction", theme.base08, nil, nil, nil)
-    highlight("TSLabel", theme.base0D, nil, nil, nil)
-    -- highlight("TSMethod", nil, nil, nil) 
-    highlight("TSNamespace",  theme.base05, nil, nil, nil)
-    -- highlight("TSNone", nil, nil, nil) 
-    -- highlight("TSNumber", nil, nil, nil) 
-    highlight("TSOperator", theme.base08, nil, nil, nil)
-    highlight("TSParameter", theme.base07, nil, nil, nil_para)
-    -- highlight("TSParameterReference", nil, nil, nil)"
-    highlight("TSProperty", theme.base07, nnnll)
-    highlight("TSPunctDelimiter", theme.base05, nil, nil, nil}
-    highlight("TSPunctBracket", theme.base05, nil, nil, nil)
-    highlight("TSPunctSpecial", theme.base05, nil, nil, nil)
-    -- highlight("TSRepeat", nil, nil, nil)
-    -- highlight("TSString", nil, nil, nil)
-    highlight("TSStringRegex", theme.base08, nil, nil, nil)
-    highlight("TSStringEscape", "#ff938a", nil, nil, nil)
-    -- highlight("TSSymbol", nil, nil, nil)
-    highlight("TSType",  theme.base08, nil, nil, nil)
-    highlight("TSTypeBuiltin ", nil, nil, nil)
-    highlight("TSVariable", theme.base08, nil, nil, nil)
-    highlight("TSVariableBuiltin", theme.base08, nil, nil, nil)
-    highlight("TSTag",             theme.base0B, nil, nil, nil)
-    highlight("TSTagDelimiter", nil, nil, nil)
-    highlight("TSText",         nil, nil, nil)
-    highlight("TextReference",  "#ff938a", nil, nil, nil)
-    highlight("TSEmphasis",     nil, nil, nil)
-    highlight("TSUnderline",    nil, nil, nil)
-    highlight("TSStrike",       nil, nil, nil)
-    highlight("TSTitle",        nil, nil, nil)
-    highlight("TSLiteral",      nil, nil, nil)
-    highlight("TSURI",          nil, nil, nil)
+    -- -- These groups are for the neovim tree-sitter highlights.
+    -- -- As of writing, tree-sitter support is a WIP, group names may change.
+    -- -- By default, most of these groups link to an appropriate Vim group,
+    -- -- TSError -> Error for example, so you do not have to define these unless you explicitly want 
+    -- -- to support Treesitter's improved syntax awareness.
+    -- highlight("TSAnnotation", nil, nil, nil, nil)
+    -- highlight("TSAttribute",  nil, nil, nil, nil)
+    -- highlight("TSBoolean",    nil, nil, nil, nil)
+    -- highlight("TSCharacter",  nil, nil, nil, nil)
+    -- highlight("TSComment",    nil, nil, nil, nil)
+    -- highlight("TSNote", theme.base00, "#75beff", nil, nil)
+    -- highlight("TSWarning", theme.base00, theme.base0A, nil, nil)
+    -- highlight("TSDanger", theme.base00, theme.base08, nil, nil)
+    -- highlight("TSConstructor", theme.base08, nil, nil, nil)
+    -- -- highlight("TSConditional", nil, nil, nil, nil)
+    -- highlight("TSConstant", theme.base0D, nil, nil, nil)
+    -- highlight("commentTSConstant", theme.base08, nil, nil, nil)
+    -- -- highlight("TSConstBuiltin", nil, nil, nil)
+    -- -- highlight("TSConstMacro",   nil, nil, nil)
+    -- -- highlight("TSError",        nil, nil, nil)
+    -- -- highlight("TSException",    nil, nil, nil)
+    -- highlight("TSField", theme.base05, nil, nil, nil)
+    -- -- highlight("TSFloat      ", nil, nil, nil) 
+    -- -- highlight("TSFunction   ", nil, nil, nil) 
+    -- -- highlight("TSFuncBuiltin", nil, nil, nil) 
+    -- -- highlight("TSFuncMacro  ", nil, nil, nil) 
+    -- highlight("TSInclude", theme.base08, nil, nil, nil)
+    -- highlight("TSKeyword", theme.base08, nil, nil, nil)
+    -- highlight("TSKeywordFunction", theme.base08, nil, nil, nil)
+    -- highlight("TSLabel", theme.base0D, nil, nil, nil)
+    -- -- highlight("TSMethod", nil, nil, nil) 
+    -- highlight("TSNamespace",  theme.base05, nil, nil, nil)
+    -- -- highlight("TSNone", nil, nil, nil) 
+    -- -- highlight("TSNumber", nil, nil, nil) 
+    -- highlight("TSOperator", theme.base08, nil, nil, nil)
+    -- highlight("TSParameter", theme.base07, nil, nil, nil_para)
+    -- -- highlight("TSParameterReference", nil, nil, nil)"
+    -- highlight("TSProperty", theme.base07, nnnll)
+    -- highlight("TSPunctDelimiter", theme.base05, nil, nil, nil}
+    -- highlight("TSPunctBracket", theme.base05, nil, nil, nil)
+    -- highlight("TSPunctSpecial", theme.base05, nil, nil, nil)
+    -- -- highlight("TSRepeat", nil, nil, nil)
+    -- -- highlight("TSString", nil, nil, nil)
+    -- highlight("TSStringRegex", theme.base08, nil, nil, nil)
+    -- highlight("TSStringEscape", "#ff938a", nil, nil, nil)
+    -- -- highlight("TSSymbol", nil, nil, nil)
+    -- highlight("TSType",  theme.base08, nil, nil, nil)
+    -- highlight("TSTypeBuiltin ", nil, nil, nil)
+    -- highlight("TSVariable", theme.base08, nil, nil, nil)
+    -- highlight("TSVariableBuiltin", theme.base08, nil, nil, nil)
+    -- highlight("TSTag",             theme.base0B, nil, nil, nil)
+    -- highlight("TSTagDelimiter", nil, nil, nil)
+    -- highlight("TSText",         nil, nil, nil)
+    -- highlight("TextReference",  "#ff938a", nil, nil, nil)
+    -- highlight("TSEmphasis",     nil, nil, nil)
+    -- highlight("TSUnderline",    nil, nil, nil)
+    -- highlight("TSStrike",       nil, nil, nil)
+    -- highlight("TSTitle",        nil, nil, nil)
+    -- highlight("TSLiteral",      nil, nil, nil)
+    -- highlight("TSURI",          nil, nil, nil)
+
+    -- -- Lua
+    -- highlight("luaTSConstructor", theme.base05, nil, nil, nil)
+
+    -- -- C
+    -- highlight("cTSLabel", theme.base05, nil, nil, nil)
+
+    -- -- CSS
+    -- highlight("cssTSProperty", theme.base07, nil, nil, nil)
+    -- highlight("cssTSType",theme.base0B, nil, nil, nil)
+
+    -- -- HTML
+    -- highlight("htmlTSConstant",theme.base0B, nil, nil, nil)
+    -- highlight("htmlTag", theme.base05, nil, nil, nil)
+    -- highlight("htmlEndTag", theme.base05, nil, nil, nil)
+    -- highlight("htmlTagName",theme.base0B, nil, nil, nil)
+    -- highlight("htmlArg", "#ff938a", nil, nil, nil)
+
+    -- -- Javascript
+    -- highlight("javascriptTSType", theme.base05, nil, nil, nil)
+    -- highlight("javascriptTSParameter", "#f69d50", nil, nil, nil)
+    -- highlight("javascriptTSVariable", theme.base08, nil, nil, nil)}
+    -- highlight("javascriptTSPunctDelimiter", theme.base05, nil, nil, nil)
+    -- highlight("javascriptTSStringRegex", theme.base0C, nil, nil, nil)
+    -- highlight("javascriptTSConstructor", theme.base07, nil, nil, nil)
+    -- highlight("javascriptTSProperty", theme.base07, nil, nil, nil)
+    -- highlight("regexTSStringEscape", theme.base08, nil, nil, nil)
+
+    -- -- JSon
+    -- highlight("jsonTSLabel", c.syntax.jsonLabel)
+
+    -- -- Less
+    -- highlight("lessVariable", theme.base05, nil, nil, nil)
+    -- highlight("lessProperty", theme.base08, nil, nil, nil)}
+    -- highlight("cssTagName",theme.base0B, nil, nil, nil)
+    -- highlight("cssPseudoClassId", theme.base07, nil, nil, nil)
+    -- highlight("lessClassCall", theme.base07, nil, nil, nil)
+    -- highlight("lessClass", theme.base07, nil, nil, nil)
+
+    -- -- Make
+    -- highlight("makeSpecial", theme.base08, nil, nil, nil)
+
+    -- -- Obj-C
+    -- highlight("cBlock", theme.base07, nil, nil, nil)
+
+    -- -- Python
+    -- highlight("pythonTSType", theme.base07, nil, nil, nil)
+    -- highlight("pythonTSParameter", "#f69d50", nil, nil, nil)
+
+    -- -- Ruby
+    -- highlight("rubyTSType", theme.base07, nil, nil, nil)
+
+    -- -- SCSS
+    -- highlight("scssTSVariable", "#f69d50", nil, nil, nil)
+    -- highlight("scssTSType",theme.base0B, nil, nil, nil)
+    -- highlight("scssTSProperty", theme.base07, nil, nil, nil)
+    -- highlight("scssTSParameter", "#f69d50", nil, nil, nil)
+
+    -- -- SQL
+    -- highlight("sqlFold", theme.base08, nil, nil, nil)}
+    -- highlight("sqlKeyword", theme.base08, nil, nil, nil)
+
+    -- -- Typescript
+    -- highlight("typescriptTSType", theme.base07, nil, nil, nil)
+    -- highlight("typescriptTSConstructor", theme.base07, nil, nil, nil)
+    -- highlight("typescriptTSTypeBuiltin", theme.base08, nil, nil, nil)}
+
+    -- -- XML
+    -- highlight("xmlProcessing",theme.base0B, nil, nil, nil)
+    -- highlight("xmlTagName",theme.base0B, nil, nil, nil)
+    -- highlight("xmlTag", theme.base05, nil, nil, nil)
+    -- highlight("xmlAttrib",theme.base0B, nil, nil, nil)
+
+    -- -- YAML
+    -- highlight("yamlTSField",theme.base0B, nil, nil, nil)
+
+    -- -- Java
+    -- highlight("javaTSVariable", theme.base05, nil, nil, nil)
+    -- highlight("javaTSType", theme.base07, nil, nil, nil)
+    -- highlight("javaTSParameter", "#f69d50", nil, nil, nil)
+
+    -- -- Markdown
+    -- highlight("markdownHeadingRule", theme.base08, nil, nil, nil)}
+    -- highlight("markdownListMarker", "#f69d50", nil, nil, nil)
+    -- highlight("markdownRule", theme.base08, nil, nil, nil)}
+    -- highlight("markdownBold", theme.base05, nil, nil, nil)
+    -- highlight("markdownItalic", theme.base05, nil, nil, nil)
+    -- highlight("markdownCode", theme.base05, nil, nil, nil)
+    -- highlight("markdownCodeBlock", theme.base05, nil, nil, nil)
+    -- highlight("markdownBlockquote",theme.base0B, nil, nil, nil)
+    -- highlight("markdownCodeDelimiter", theme.base07, nil, nil, nil)
+    -- highlight("markdownUrlTitle", theme.base0C, nil, nil, nil)
+
+
+    -- -- DevIcons
+    -- highlight("DevIconC", "#519aba", nil, nil, nil)
+    -- highlight("DevIconClojure", "#8dc149", nil, nil, nil)
+    -- highlight("DevIconCoffee", "#cbcb41", nil, nil, nil)
+    -- highlight("DevIconCs", "#519aba", nil, nil, nil)
+    -- highlight("DevIconCss", "#519aba", nil, nil, nil)
+    -- highlight("DevIconMarkdown", "#519aba", nil, nil, nil)
+    -- highlight("DevIconGo", "#519aba", nil, nil, nil)
+    -- highlight("DevIconHtm", "#e37933", nil, nil, nil)
+    -- highlight("DevIconHtml", "#e37933", nil, nil, nil)
+    -- highlight("DevIconJava", "#cc3e44", nil, nil, nil)
+    -- highlight("DevIconJs", "#cbcb41", nil, nil, nil)
+    -- highlight("DevIconJson", "#cbcb41", nil, nil, nil)
+    -- highlight("DevIconLess", "#519aba", nil, nil, nil)
+    -- highlight("DevIconMakefile", "#e37933", nil, nil, nil)
+    -- highlight("DevIconMustache", "#e37933", nil, nil, nil)
+    -- highlight("DevIconPhp", "#a074c4", nil, nil, nil)
+    -- highlight("DevIconPython", "#4e93b3", nil, nil, nil)
+    -- highlight("DevIconErb", "#cc3e44", nil, nil, nil)
+    -- highlight("DevIconRb", "#cc3e44", nil, nil, nil)
+    -- highlight("DevIconSass", "#f55385", nil, nil, nil)
+    -- highlight("DevIconScss", "#f55385", nil, nil, nil)
+    -- highlight("DevIconSh", "#4d5a5e", nil, nil, nil)
+    -- highlight("DevIconSql", "#f55385", nil, nil, nil)
+    -- highlight("DevIconTs", "#519aba", nil, nil, nil)
+    -- highlight("DevIconXml", "#e37933", nil, nil, nil)
+    -- highlight("DevIconYaml", "#a074c4", nil, nil, nil)
+    -- highlight("DevIconYml", "#a074c4", nil, nil, nil)
 
     -- TODO
     -- nvim.command 'syntax on'
