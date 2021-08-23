@@ -1,10 +1,10 @@
 return {
-    base00 = "1e222a",
-    base01 = "353b45",
+    base00 = "24292e",  -- background
+    base01 = "2d333b",
     base02 = "3e4451",
-    base03 = "545862",
+    base03 = "266a70",
     base04 = "565c64",
-    base05 = "abb2bf",
+    base05 = "adbac7",  -- foreground
     base06 = "b6bdca",
     base07 = "c8ccd4",
     base08 = "e5534b",
