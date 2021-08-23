@@ -18,95 +18,95 @@ function M.setup(config)
     none = "NONE",
 
     -- Core Colors
-    fg_dark = themes({dark = "#666666", dimmed = "#636e7b", light = "#666666"}),
-    term_fg = themes({dark = "#d1d5da", dimmed = "#768390", light = "#586069"}),
+    fg_dark = themes({dimmed = "#636e7b"}),
+    term_fg = themes({dimmed = "#768390"}),
 
     orange = "#d18616",
-    black = themes({dark = "#24292e", dimmed = "#22272e", light = "#697179"}),
-    brightBlack = themes({dark = "#666666", dimmed = "#636e7b", light = "#666666"}),
-    white = themes({dark = "#b1bac4", dimmed = "#909dab", light = "#e1e4e8"}),
-    brightWhite = themes({dark = "#e5e5e5", dimmed = "#cdd9e5", light = "#a5a5a5"}),
-    red = themes({dark = "#f14c4c", dimmed = "#ff938a", light = "#d03d3d"}),
-    brightRed = themes({dark = "#f14c4c", dimmed = "#ff938a", light = "#cd3131"}),
-    green = themes({dark = "#23d18b", dimmed = "#6bc46d", light = "#14ce14"}),
-    brightGreen = themes({dark = "#23d18b", dimmed = "#6bc46d", light = "#14ce14"}),
-    yellow = themes({dark = "#e2e210", dimmed = "#c69026", light = "#949800"}),
-    brightYellow = themes({dark = "#f5f543", dimmed = "#daaa3f", light = "#b5ba00"}),
-    blue = themes({dark = "#3b8eea", dimmed = "#6cb6ff", light = "#0451a5"}),
-    brightBlue = themes({dark = "#3b8eea", dimmed = "#6cb6ff", light = "#0451a5"}),
-    magenta = themes({dark = "#bc3fbc", dimmed = "#b083f0", light = "#bc05bc"}),
-    brightMagenta = themes({dark = "#d670d6", dimmed = "#dcbdfb", light = "#bc05bc"}),
-    cyan = themes({dark = "#29b7da", dimmed = "#56d4dd", light = "#0598bc"}),
-    brightCyan = themes({dark = "#29b8db", dimmed = "#56d4dd", light = "#0598bc"}),
+    black = themes({dimmed = "#22272e"}),
+    brightBlack = themes({dimmed = "#636e7b"}),
+    white = themes({dimmed = "#909dab"}),
+    brightWhite = themes({dimmed = "#cdd9e5"}),
+    red = themes({dimmed = "#ff938a"}),
+    brightRed = themes({dimmed = "#ff938a"}),
+    green = themes({dimmed = "#6bc46d"}),
+    brightGreen = themes({dimmed = "#6bc46d"}),
+    yellow = themes({dimmed = "#c69026"}),
+    brightYellow = themes({dimmed = "#daaa3f"}),
+    blue = themes({dimmed = "#6cb6ff"}),
+    brightBlue = themes({dimmed = "#6cb6ff"}),
+    magenta = themes({dimmed = "#b083f0"}),
+    brightMagenta = themes({dimmed = "#dcbdfb"}),
+    cyan = themes({dimmed = "#56d4dd"}),
+    brightCyan = themes({dimmed = "#56d4dd"}),
 
-    bg = themes({dark = "#24292e", dimmed = "#22272e", light = "#ffffff"}),
-    bg2 = themes({dark = "#1f2428", dimmed = "#1e2228", light = "#f6f8fa"}),
-    bg_visual = themes({dark = "#444c56", dimmed = "#444c56", light = "#e1e4e8"}),
-    bg_visual_selection = themes({dark = "#284566", dimmed = "#264466", light = "#dbe9f9"}),
-    bg_highlight = themes({dark = "#2c313a", dimmed = "#2d333b", light = "#f6f8fa"}),
+    bg = themes({dimmed = "#22272e"}),
+    bg2 = themes({dimmed = "#1e2228"}),
+    bg_visual = themes({dimmed = "#444c56"}),
+    bg_visual_selection = themes({dimmed = "#264466"}),
+    bg_highlight = themes({dimmed = "#2d333b"}),
 
-    fg = themes({dark = "#c9d1d9", dimmed = "#adbac7", light = "#24292e"}),
-    fg_light = themes({dark = "#d1d5da", dimmed = "#adbac7", light = "#586069"}),
-    fg_gutter = themes({dark = "#e1e4e8", dimmed = "#768390", light = "#babbbd"}),
+    fg = themes({dimmed = "#adbac7"}),
+    fg_light = themes({dimmed = "#adbac7"}),
+    fg_gutter = themes({dimmed = "#768390"}),
 
-    cursor = themes({dark = "#c8e1ff", dimmed = "#6cb6ff", light = "#044289"}),
+    cursor = themes({dimmed = "#6cb6ff"}),
 
-    line_nr = themes({dark = "#444d56", dimmed = "#768390", light = "#babbbd"}),
-    cursor_line_nr = themes({dark = "#e1e4e8", dimmed = "#adbac7", light = "#24292e"}),
+    line_nr = themes({dimmed = "#768390"}),
+    cursor_line_nr = themes({dimmed = "#adbac7"}),
 
-    bg_search = themes({dark = "#404030", dimmed = "#3f3e30", light = "#fff2be"}),
+    bg_search = themes({dimmed = "#3f3e30"}),
 
-    error = themes({dark = "#f97583", dimmed = "#e5534b", light = "#cb2431"}),
-    warning = themes({dark = "#cca700", dimmed = "#cca700", light = "#bf8803"}),
+    error = themes({dimmed = "#e5534b"}),
+    warning = themes({dimmed = "#cca700"}),
     info = "#75beff",
-    hint = themes({dark = "#eeeeb3", dimmed = "#eeeeb3", light = "#6c6c6c"}),
+    hint = themes({dimmed = "#eeeeb3"}),
 
     lsp = {
-      referenceText = themes({dark = "#265459", dimmed = "#28575d", light = "#c6eed2"})
+      referenceText = themes({dimmed = "#28575d"})
     },
 
     syntax = {
-      comment = themes({dark = "#6a737d", dimmed = "#768390", light = "#6a737d"}),
-      constant = themes({dark = "#79b8ff", dimmed = "#6cb6ff", light = "#005cc5"}),
-      string = themes({dark = "#9ecbff", dimmed = "#96d0ff", light = "#032f62"}),
-      variable = themes({dark = "#79b8ff", dimmed = "#6cb6ff", light = "#005cc5"}),
-      keyword = themes({dark = "#f97583", dimmed = "#f47067", light = "#d73a49"}),
-      func = themes({dark = "#b392f0", dimmed = "#dcbdfb", light = "#6f42c1"}),
-      func_param = themes({dark = "#e1e4e8", dimmed = "#adbac7", light = "#24292e"}),
-      matchParenBG = themes({dark = "#25686c", dimmed = "#266a70", light = "#c6eed2"}),
-      tag = themes({dark = "#85e89d", dimmed = "#8ddb8c", light = "#22863a"}),
-      htmlArg = themes({dark = "#fdaeb7", dimmed = "#ff938a", light = "#b31d28"}),
-      param = themes({dark = "#ffab70", dimmed = "#f69d50", light = "#e36209"}),
-      jsonLabel = themes({dark = "#79b8ff", dimmed = "#6cb6ff", light = "#005cc5"})
+      comment = themes({dimmed = "#768390"}),
+      constant = themes({dimmed = "#6cb6ff"}),
+      string = themes({dimmed = "#96d0ff"}),
+      variable = themes({dimmed = "#6cb6ff"}),
+      keyword = themes({dimmed = "#f47067"}),
+      func = themes({dimmed = "#dcbdfb"}),
+      func_param = themes({dimmed = "#adbac7"}),
+      matchParenBG = themes({dimmed = "#266a70"}),
+      tag = themes({dimmed = "#8ddb8c"}),
+      htmlArg = themes({dimmed = "#ff938a"}),
+      param = themes({dimmed = "#f69d50"}),
+      jsonLabel = themes({dimmed = "#6cb6ff"})
     },
 
     pmenu = {
-      select = themes({dark = "#044289", dimmed = "#373e47", light = "#cce5ff"}),
-      bg = themes({dark = "#1f2428", dimmed = "#323941", light = "#f6f8fa"}),
-      sbar = themes({dark = "#32383e", dimmed = "#363b44", light = "#f0f1f3"})
+      select = themes({dimmed = "#373e47"}),
+      bg = themes({dimmed = "#323941"}),
+      sbar = themes({dimmed = "#363b44"})
     },
 
     git = {
-      change = themes({dark = "#79b8ff", dimmed = "#daaa3f", light = "#005cc8"}),
-      add = themes({dark = "#34d058", dimmed = "#6bc46d", light = "#28a745"}),
-      delete = themes({dark = "#ea4a5a", dimmed = "#b34642", light = "#d73a49"}),
-      conflict = themes({dark = "#ffab70", dimmed = "#daaa3f", light = "#e36209"}),
-      ignore = themes({dark = "#6a737d", dimmed = "#545d68", light = "#959da5"})
+      change = themes({dimmed = "#daaa3f"}),
+      add = themes({dimmed = "#6bc46d"}),
+      delete = themes({dimmed = "#b34642"}),
+      conflict = themes({dimmed = "#daaa3f"}),
+      ignore = themes({dimmed = "#545d68"})
     },
 
     diff = {
-      add = themes({dark = "#244032", dimmed = "#293d34", light = "#e4f9e9"}),
-      add_fg = themes({dark = "#56d364", dimmed = "#6bc46d", light = "#22863a"}),
-      change = themes({dark = "#341a00", dimmed = "#452700", light = "#fff5b1"}),
-      change_fg = themes({dark = "#e3b341", dimmed = "#daaa3f", light = "#b08800"}),
-      delete = themes({dark = "#462c32", dimmed = "#432b30", light = "#fae5e7"}),
-      delete_fg = themes({dark = "#f85149", dimmed = "#e5534b", light = "#cb2431"})
+      add = themes({dimmed = "#293d34"}),
+      add_fg = themes({dimmed = "#6bc46d"}),
+      change = themes({dimmed = "#452700"}),
+      change_fg = themes({dimmed = "#daaa3f"}),
+      delete = themes({dimmed = "#432b30"}),
+      delete_fg = themes({dimmed = "#e5534b"})
     },
 
     gitSigns = {
-      change = themes({dark = "#2188ff", dimmed = "#966600", light = "#2188ff"}),
-      add = themes({dark = "#28a745", dimmed = "#2b6a30", light = "#28a745"}),
-      delete = themes({dark = "#ea4a5a", dimmed = "#ad2e2c", light = "#d73a49"})
+      change = themes({dimmed = "#966600"}),
+      add = themes({dimmed = "#2b6a30"}),
+      delete = themes({dimmed = "#ad2e2c"})
     },
 
     devIcons = {
